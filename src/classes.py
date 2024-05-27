@@ -35,3 +35,10 @@ class Operation:
             number_card = number_card + "**"
         info.append(number_card)
         return " ".join(info)
+
+
+    def __lt__(self, other):
+        return self.date < other.date
+
+    def __gt__(self, other):
+        return self.date > other.date
