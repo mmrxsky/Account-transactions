@@ -20,7 +20,7 @@ class Operation:
         self.from_ = from_
         self.state = state
         self.state = state
-    def  convert_date(self):
+    def convert_date(self):
         """Функция конвертации даты"""
         iso_date = datetime.fromisoformat(self.date)
         return iso_date.strftime("%d.%m.%Y")
