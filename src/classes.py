@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 class Operation:
     def __init__(
             self,
@@ -17,3 +20,18 @@ class Operation:
         self.from_ = from_
         self.state = state
         self.state = state
+    def  convert_date(self):
+        """Функция конвертации даты"""
+        iso_date = datetime.fromisoformat(self.date)
+        return iso_date.strftime("%d.%m.%Y")
+
+    def mask_payment_info(self, payment_info: str):
+        """Функция конвертации счёта"""
+        info: list[str] = payment_info.split(" ")
+        number_card = info.pop(-1)
+        if payment_info.startswitch("Счёт"):
+            number_card = number_card + "*"
+        else:
+            number_card = number_card + "**"
+        info.append(number_card)
+        return " ".join(info)
