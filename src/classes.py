@@ -17,9 +17,9 @@ class Operation:
         self.amount = amount
         self.currency_name = currency_name
         self.description = description
-        self.from_ = from_
-        self.state = state
-        self.state = state
+        self.from_ = from_ if from_ is not None else ""
+        self.to = to
+
     def convert_date(self):
         """Функция конвертации даты"""
         iso_date = datetime.fromisoformat(self.date)
@@ -29,7 +29,7 @@ class Operation:
         """Функция конвертации счёта"""
         info: list[str] = payment_info.split(" ")
         number_card = info.pop(-1)
-        if payment_info.startswitch("Счёт"):
+        if payment_info.startswith("Счёт"):
             number_card = number_card + "*"
         else:
             number_card = number_card + "**"
@@ -42,3 +42,12 @@ class Operation:
 
     def __gt__(self, other):
         return self.date > other.date
+
+    def __str__(self):
+        from_ = self.mask_payment_info(self.from_)
+        delimiter = " -> " if from_ else ""
+        return (
+            f"{self.convert_date()} {self.description}\n"
+            f"{self.mask_payment_info(self.from_)} -> {self.mask_payment_info(self.to)}\n"
+            f"{self.amount} {self.currency_name}"
+        )
