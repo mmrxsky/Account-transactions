@@ -15,7 +15,7 @@ def get_executed_operations(operations: list[dict]) -> list[dict]:
     return [
         operation
         for operation in operations
-        if  ...
+        if operation
     ]
 
 

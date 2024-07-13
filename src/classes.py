@@ -9,7 +9,7 @@ class Operation:
             amount: str,
             currency_name: str,
             description: str,
-            from_: str,
+            from_: str | None,
             to: str
     ):
         self.state = state
