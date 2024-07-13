@@ -2,11 +2,13 @@
 name = "account-transactions"
 version = "0.1.0"
 description = ""
-authors = ["<mrxsky> <<mmrxsky@gmail.com>>"]
+authors = ["mrxsky <mmrxsky@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+pytest = "^8.2.2"
+pytest-cov = "^5.0.0"
 
 
 [build-system]
