@@ -2,7 +2,7 @@
 name = "account-transactions"
 version = "0.1.0"
 description = ""
-authors = ["mrxsky <mmrxsky@gmail.com>"]
+authors = ["mrxsky <wwhskynet@icloud.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
